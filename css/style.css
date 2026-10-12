@@ -6,10 +6,13 @@ nav {
 
 .logo {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo a img {
-    width: 65%;
+    width: 80%;
 }
 
 .buttons-container {
@@ -19,11 +22,68 @@ nav {
 }
 
 .button {
+    max-width: 200px; /* Настройте эту величину под ваши нужды */
+    min-width: 120px;
+
     text-align: center;
     flex: 1;
     display: flex;
     justify-content: center; /* Выравнивание по горизонтали */
     align-items: center;
+    /* текст */
+    color: #00ffea; /* Неоново-бирюзовый цвет текста */
+    font-family: 'Courier New', Courier, monospace; /* Роботизированный/моноширинный шрифт */
+    font-weight: bold;
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 2px; /* Растянутые буквы */
+    text-shadow: 0 0 5px rgba(0, 255, 234, 0.6);
+    /*  */
+    padding: 12px 24px;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+
+    /* Металлический темный градиент для фона */
+    background: linear-gradient(180deg, #222c37 0%, #11171d 50%, #080b0e 100%);
+    
+    /* Массивная рамка с заклепками (имитация через тени) */
+    border: 2px solid #3b4e5f;
+    border-radius: 3px; /* Слегка скругленные, рубленые углы */
+    
+    /* Внутреннее свечение (интерфейс) + внешняя тень */
+    box-shadow: 
+        inset 0 0 8px rgba(0, 255, 234, 0.2), 
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button a {
+    color: inherit;            /* Наследует бирюзовый/золотой цвет от самой кнопки */
+    text-decoration: none;     /* Убирает синее подчеркивание */
+    display: flex;             /* Позволяет ссылке занять всю площадь кнопки */
+    justify-content: center;
+    align-items: center;
+    width: 100%;               /* Чтобы кликалась вся кнопка, а не только текст */
+    height: 100%;
+}
+
+/* Эффект при наведении (активация системы) */
+.button:hover {
+    color: #ffffff;
+    background: linear-gradient(180deg, #2b3947 0%, #18222a 50%, #0e1419 100%);
+    border-color: #00ffea; /* Рамка загорается бирюзовым */
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+    box-shadow: 
+        inset 0 0 15px rgba(0, 255, 234, 0.5), 
+        0 0 15px rgba(0, 255, 234, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Эффект при клике (нажатие на тумблер) */
+.button:active {
+    background: linear-gradient(180deg, #080b0e 0%, #11171d 100%);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    transform: translateY(1px);
 }
 
 /* здесь контенты */
