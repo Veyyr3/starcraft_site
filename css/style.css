@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    padding: 10px;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo a img {
+    width: 65%;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.buttons-container div {
+    flex: 1;
+}
