@@ -2,6 +2,8 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: #0e1419;
+    color: #ffffff;
 }
 
 nav {
@@ -100,9 +102,39 @@ nav {
     transform: translateY(1px);
 }
 
-/* здесь контенты */
+/* ========================== здесь контенты ========================== */
 .content {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 100px 10px 100px;
+}
+
+.main-text {
+    font-size: 20px;
+}
+
+/* Стили для блока с большим изображением */
+.big-image {
+    width: 100%;
+    margin-top: 20px; /* Отступ от текста сверху */
+    display: flex;
+    justify-content: center;
+}
+
+/* Стили для самой картинки внутри блока */
+.big-image img {
+    width: 100%;         /* Картинка занимает всю ширину контейнера */
+    
+    /* ГЛАВНОЕ СВОЙСТВО: обрезает картинку по краям, сохраняя её пропорции, 
+       чтобы она не сплющивалась, если пропорции файла не совпадают с высотой */
+    object-fit: cover;   
+    
+    object-position: center; /* Центрирует фокус изображения при обрезке */
+    
+    /* Стилизация под интерфейс StarCraft */
+    border: 2px solid #3b4e5f; 
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.15), 0 10px 25px rgba(0, 0, 0, 0.6);
 }
