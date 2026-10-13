@@ -1,6 +1,12 @@
 /* здесь всё для навигации */
+body {
+    padding: 0;
+    margin: 0;
+}
+
 nav {
     display: flex;
+    background-color: #2b3947;
     padding: 10px;
 }
 
@@ -9,10 +15,18 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+}
+
+.logo a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo a img {
-    width: 80%;
+    width: 65%;
 }
 
 .buttons-container {
