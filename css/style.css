@@ -115,26 +115,73 @@ nav {
     font-size: 20px;
 }
 
-/* Стили для блока с большим изображением */
+/* Стили для блока-контейнера */
 .big-image {
     width: 100%;
-    margin-top: 20px; /* Отступ от текста сверху */
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    position: relative; /* Обязательно для позиционирования текста */
+    overflow: visible;  /* Позволяет картинке подниматься выше границы */
 }
 
-/* Стили для самой картинки внутри блока */
+/* Стили для картинки */
 .big-image img {
-    width: 100%;         /* Картинка занимает всю ширину контейнера */
-    
-    /* ГЛАВНОЕ СВОЙСТВО: обрезает картинку по краям, сохраняя её пропорции, 
-       чтобы она не сплющивалась, если пропорции файла не совпадают с высотой */
+    width: 100%;
     object-fit: cover;   
+    object-position: center; 
     
-    object-position: center; /* Центрирует фокус изображения при обрезке */
-    
-    /* Стилизация под интерфейс StarCraft */
     border: 2px solid #3b4e5f; 
     border-radius: 4px;
+
+    /* Исходное свечение (со всех сторон) */
     box-shadow: 0 0 15px rgba(0, 255, 234, 0.15), 0 10px 25px rgba(0, 0, 0, 0.6);
+
+    /* Плавность анимации подъема, свечения и рамки */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Стили для скрытого текста */
+.big-image p {
+    position: absolute;
+    bottom: 15px;               /* Отступ текста от нижнего края */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Смещаем немного вниз */
+    
+    color: #00ffea;
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(0, 255, 234, 0.8);
+    
+    pointer-events: none;       /* Чтобы текст не мешал наведению на картинку */
+    opacity: 0;                 /* Скрыт по умолчанию */
+    
+    /* Плавность появления текста */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* === ЭФФЕКТЫ ПРИ НАВЕДЕНИИ === */
+
+/* 1. Картинка поднимается и подсвечивается снизу и по бокам */
+.big-image:hover img {
+    transform: translateY(-8px); /* Поднимаем картинку вверх */
+    border-color: #00ffea;       /* Подсвечиваем рамку StarCraft-голубым */
+
+    /* 
+       Чтобы свечение не шло НАВЕРХ, используем положительный смещение по Y (10px) 
+       и боковые тени без верхнего размытия.
+    */
+    box-shadow: 
+        0 12px 25px rgba(0, 255, 234, 0.4),  /* Свечение снизу */
+        -10px 10px 20px rgba(0, 255, 234, 0.25), /* Свечение слева-снизу */
+         10px 10px 20px rgba(0, 255, 234, 0.25), /* Свечение справа-снизу */
+        0 15px 30px rgba(0, 0, 0, 0.8);        /* Усиленная темная тень снизу */
+}
+
+/* 2. Текст плавно появляется и приподнимается в исходную позицию */
+.big-image:hover p {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
