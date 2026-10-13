@@ -123,6 +123,7 @@ nav {
     justify-content: center;
     position: relative; /* Обязательно для позиционирования текста */
     overflow: visible;  /* Позволяет картинке подниматься выше границы */
+    cursor: pointer;
 }
 
 /* Стили для картинки */
