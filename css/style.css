@@ -345,32 +345,39 @@ nav {
 /* Контейнер для всех юнитов */
 .unit-images {
     display: flex;
-    justify-content: center; /* Центрирует всю группу юнитов на странице */
-    gap: 30px;               /* Отступ между блоками юнитов */
-    align-items: flex-start; /* Выравнивает блоки по верхнему краю */
+    width: 100%;             /* Растягивается на всю доступную ширину */
+    box-sizing: border-box;
     padding: 20px;
 }
 
-/* Карточка каждого юнита (картинка + текст) */
+/* Блок каждого юнита */
 .unit-container {
+    width: 33.33%;           /* Каждая карточка занимает ровно 1/3 ширины */
     display: flex;
-    flex-direction: column; /* Размещает текст строго под картинкой */
-    align-items: center;    /* Центрирует текст относительно картинки */
+    flex-direction: column;  /* Картинка сверху, текст снизу */
+    align-items: center;     /* Центрирует элементы по горизонтали */
+    padding: 0 10px;         /* Внутренние отступы, чтобы картинки не слипались */
+    box-sizing: border-box;
 }
 
 /* Настройки изображений */
 .unit-container img {
-    width: 100%;
-    object-fit: cover;      /* Картинки красиво заполняют область без искажения пропорций */
-    border-radius: 8px;     /* Скругление углов (по желанию) */
+    width: 100%;             /* Занимает всю ширину своего unit-container */
+    height: 500px;           /* Фиксированная высота для одинакового размера */
+    object-fit: cover;       /* Сохраняет пропорции фото, обрезая лишнее */
+    border-radius: 8px;      /* Скругление углов (по желанию) */
     border: 2px solid #ffffff; /* Белый контур (по желанию) */
 }
 
-/* Настройки текста подписи */
+/* Подпись под фото */
 .unit-container p {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: 3rem;
     font-weight: bold;
-    margin-top: 10px;       /* Отступ от картинки до текста */
+    margin-top: 10px;
     text-align: center;
+}
+
+.unit-h {
+    font-size: 4rem;
 }
