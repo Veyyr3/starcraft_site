@@ -340,3 +340,37 @@ nav {
 .card:hover .card-back {
     transform: rotateY(0deg); /* Задняя выходит вперед */
 }
+
+/* ========================== фото юнитов ========================== */
+/* Контейнер для всех юнитов */
+.unit-images {
+    display: flex;
+    justify-content: center; /* Центрирует всю группу юнитов на странице */
+    gap: 30px;               /* Отступ между блоками юнитов */
+    align-items: flex-start; /* Выравнивает блоки по верхнему краю */
+    padding: 20px;
+}
+
+/* Карточка каждого юнита (картинка + текст) */
+.unit-container {
+    display: flex;
+    flex-direction: column; /* Размещает текст строго под картинкой */
+    align-items: center;    /* Центрирует текст относительно картинки */
+}
+
+/* Настройки изображений */
+.unit-container img {
+    width: 100%;
+    object-fit: cover;      /* Картинки красиво заполняют область без искажения пропорций */
+    border-radius: 8px;     /* Скругление углов (по желанию) */
+    border: 2px solid #ffffff; /* Белый контур (по желанию) */
+}
+
+/* Настройки текста подписи */
+.unit-container p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;       /* Отступ от картинки до текста */
+    text-align: center;
+}
