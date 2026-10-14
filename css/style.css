@@ -4,6 +4,7 @@ body {
     margin: 0;
     background-color: #0e1419;
     color: #ffffff;
+    font-family: 'Courier New', Courier, monospace; /* Роботизированный/моноширинный шрифт */
 }
 
 nav {
@@ -48,7 +49,6 @@ nav {
     align-items: center;
     /* текст */
     color: #00ffea; /* Неоново-бирюзовый цвет текста */
-    font-family: 'Courier New', Courier, monospace; /* Роботизированный/моноширинный шрифт */
     font-weight: bold;
     text-transform: uppercase; /* Все буквы заглавные */
     letter-spacing: 2px; /* Растянутые буквы */
