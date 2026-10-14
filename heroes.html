@@ -4,15 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heroes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- здесь кнопки навигации -->
+    <nav>
+        <!-- логотип старкрафт (если нажать, то вернуться домой) -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="imgs/logo.png" alt="">
+            </a>
+        </div>
+
+        <!-- кнопки на другие страницы -->
+        <div class="buttons-container">
+            <div class="button">
+                <a href="starcraft1.html"><p>StarCraft I</p></a>
+            </div>
+
+            <div class="button">
+                <a href="starcraft_brood_war.html"><p>StarCraft Brood War</p></a>
+            </div>
+                
+            <div class="button">
+                <a href="starcraft2.html"><p>StarCraft II</p></a>
+            </div>
+
+            <div class="button">
+                <a href="starcraft.html"><p>StarCraft</p></a>
+            </div>
+        </div>
+    </nav>
     
     <div class="content">
         <!-- сетка карточек -->
         <div class="cards-container">
             <!-- карточка -->
             <div class="card">
-
+                <!-- передняя часть карточки -->
+                <div class="card-front">
+                    <!-- фото героя -->
+                    <img src="imgs/heroes/Jim Reinor.webp" alt="">
+                    <!-- имя героя -->
+                    <p class="hero-name">Джим Рейнор</p>
+                </div>
+                <!-- задняя часть карточки -->
+                <div class="card-back">
+                    <!-- описание героя (скрыто сзади карточки) -->
+                    <p class="hero-description">Главный герой вселенной StarCraft, прошедший путь от колониального маршала до лидера повстанцев и легендарного космического ковбоя. После предательства Арктура Менгска, который бросил Сару Керриган на растерзание зергам, Джим основал собственное движение «Рейдеры Рейнора» для борьбы с тиранией.</p>
+                </div>
             </div>
         </div>
     </div>
