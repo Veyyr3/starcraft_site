@@ -41,6 +41,7 @@
     <div class="content">
         <!-- Форма на турнир -->
         <form id="tournamentForm">
+            <!-- ФИО, где отчество опционально -->
             <div>
                 <label for="fullname">ФИО:</label><br>
                 <input type="text" id="fullname" placeholder="Иванов Иван Иванович">
@@ -48,13 +49,15 @@
             </div>
             <br>
 
+            <!-- Телефон -->
             <div>
                 <label for="phone">Номер телефона:</label><br>
-                <input type="text" id="phone" placeholder="+79991234567">
+                <input type="text" id="phone" placeholder="+99691234567">
                 <span id="phoneError" style="color: red;"></span>
             </div>
             <br>
 
+            <!-- Почта -->
             <div>
                 <label for="email">Электронная почта:</label><br>
                 <input type="text" id="email" placeholder="example@mail.com">
@@ -63,6 +66,7 @@
 
             <br>
 
+            <!-- Выбор расы -->
             <div>
                 <label>Выберите расу:</label><br>
                 <label>
@@ -75,17 +79,17 @@
                     <input type="radio" name="race" value="Protoss"> Протоссы
                 </label><br>
                 <label>
-                    <input type="radio" name="race" value="Random"> Случайная (Random)
+                    <input type="radio" name="race" value="Random"> Случайная
                 </label><br>
                 <span id="raceError" style="color: red;"></span>
             </div>
 
             <br>
-
+            <!-- отправка заявки -->
             <button type="submit">Отправить заявку</button>
         </form>
 
-        <!-- Сообщение об успешной отправке -->
+        <!-- сообщение об успешной отправке -->
         <h3 id="successMessage" style="color: green;"></h3>
     </div>
 
