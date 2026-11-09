@@ -38,7 +38,7 @@ async function loadHeroes() {
     if (savedHeroes && savedHeroes !== '[]') {
         localHeroes = JSON.parse(savedHeroes);
         renderHeroesList(localHeroes);
-    } else {
+    } else { // иначе читаем JSON
         try {
             const response = await fetch(DATA_URL);
             if (!response.ok) throw new Error(`Ошибка загрузки: ${response.status}`);
@@ -131,6 +131,7 @@ if (heroForm) {
     });
 }
 
+// функция для обновления карточки
 function prepareUpdate(id) {
     const hero = localHeroes.find(h => h.id === Number(id)); // ищем локального героя
     if (!hero) return; // если нету то ниче не делаем
