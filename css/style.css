@@ -292,6 +292,9 @@ nav {
     /* Важно: включает границу в общие размеры элемента, 
        чтобы карточки не сдвигались */
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* Передняя сторона */
@@ -530,4 +533,103 @@ nav {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* ========================== CRUD ========================== */
+
+/* Контейнер формы */
+#heroForm {
+    max-width: 500px;
+    margin: 20px auto 40px auto;
+    padding: 24px;
+    background: #1e1e24;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Метки (подписи к полям) */
+#heroForm label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #e0e0e0;
+    margin-bottom: -8px;
+}
+
+/* Поля ввода и текстовая область */
+#heroForm input[type="text"],
+#heroForm input[type="url"],
+#heroForm textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    background-color: #2b2b36;
+    border: 1px solid #3f3f4e;
+    color: #ffffff;
+}
+
+/* Изменение размера для textarea */
+#heroForm textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.4;
+}
+
+/* Эффект при клике/фокусе на поле */
+#heroForm input[type="text"]:focus,
+#heroForm input[type="url"]:focus,
+#heroForm textarea:focus {
+    outline: none;
+    border-color: #409eff;
+    box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.15);
+    background-color: #ffffff;
+}
+
+/* Плейсхолдеры */
+#heroForm input::placeholder,
+#heroForm textarea::placeholder {
+    color: #a8abb2;
+}
+
+/* Кнопки */
+#heroForm button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#heroForm button:active {
+    transform: scale(0.98);
+}
+
+/* Кнопка "Добавить героя" / "Сохранить" */
+#submitBtn {
+    background-color: #409eff;
+    color: #ffffff;
+    margin-top: 8px;
+}
+
+#submitBtn:hover {
+    background-color: #66b1ff;
+}
+
+/* Кнопка "Отмена" */
+#cancelBtn {
+    background-color: #909399;
+    color: #ffffff;
+}
+
+#cancelBtn:hover {
+    background-color: #a6a9ad;
 }

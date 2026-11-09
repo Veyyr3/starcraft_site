@@ -37,6 +37,25 @@
     </nav>
     
     <div class="content">
+        <!-- Формочка для CRUD -->
+        <form id="heroForm">
+            <input type="hidden" id="heroId">
+            
+            <label for="heroName">Имя героя:</label>
+            <input type="text" id="heroName" required>
+            
+            <label for="heroImage">Ссылка на изображение:</label>
+            <input type="url" id="heroImage" placeholder="https://example.com/image.jpg">
+            
+            <label for="heroDescription">Описание / Способности:</label>
+            <textarea id="heroDescription" required></textarea>
+            
+            <button type="submit" id="submitBtn">Добавить героя</button>
+            <button type="button" id="cancelBtn" style="display: none;">Отмена</button>
+        </form>
+        <button onclick="resetAll()">Вернуть всё как было</button>
+
+
         <!-- сетка карточек -->
         <div class="cards-container">
             <!-- Здесь раньше были карточки, но их заменил JS и JSON -->
