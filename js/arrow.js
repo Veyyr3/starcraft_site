@@ -1,8 +1,9 @@
+// кнопка вверх
 const scrollUpBtn = document.getElementById('up');
 
-// Событие 1: scroll — появление/скрытие кнопки при прокрутке
+// появление/скрытие кнопки при прокрутке
 window.addEventListener('scroll', () => {
-    // Если прокрутили больше 300px, показываем кнопку
+    // если прокрутили больше 300px, то показываем кнопку
     if (window.scrollY > 300) {
         scrollUpBtn.classList.add('show');
     } else {
@@ -10,7 +11,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Событие 2: click — плавный скролл в самый верх страницы
+// скролл в самый верх страницы
 scrollUpBtn.addEventListener('click', () => {
     window.scrollTo({
         top: 0,
