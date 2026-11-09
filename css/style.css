@@ -381,3 +381,59 @@ nav {
 .unit-h {
     font-size: 4rem;
 }
+
+/* Animation */
+/* Фиксированный контейнер в правом нижнем углу */
+.frontend {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+/* Стиль круглой кнопки */
+.circle-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0b1f33; /* Тёмно-синий стиль StarCraft */
+  border: 2px solid #00a2ff; /* Неоновая синяя рамка */
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  /* Изначально кнопка невидима */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  
+  /* Плавный переход для всех свойств */
+  transition: all 0.3s ease;
+}
+
+/* Иконка стрелки внутри кнопки */
+.circle-button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Эффекты при наведении */
+.circle-button:hover {
+  background-color: #00a2ff;
+  box-shadow: 0 0 20px rgba(0, 162, 255, 0.9);
+  transform: translateY(-3px);
+}
+
+.circle-button:hover img {
+  filter: brightness(0) invert(1); /* Делает стрелку белой при наведении */
+}
+
+/* Класс, который делает кнопку видимой (добавляется через JS) */
+.circle-button.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
