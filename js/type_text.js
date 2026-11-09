@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const pTag = container.querySelector('p');
     if (!pTag) return;
 
-    // Сохраняем исходный текст и очищаем тег <p>
+    // сохраняем исходный текст и очищаем тег <p>
     const fullText = pTag.textContent.trim();
     pTag.textContent = '';
     
-    // Добавляем класс для мигающего курсора
+    // добавляем класс для мигающего курсора
     pTag.classList.add('typing-cursor');
 
     let index = 0;
-    const speed = 25; // Скорость печати (в миллисекундах на символ)
+    const speed = 25; // скорость печати (в миллисекундах на символ)
 
     function type() {
         if (index < fullText.length) {
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(type, speed);
         } else {
-            // Убираем курсор после окончания печати (по желанию)
+            // убираем курсор после окончания печати
             setTimeout(() => {
                 pTag.classList.remove('typing-cursor');
             }, 1500);
         }
     }
 
-    // Запускаем печать
+    // запускаем печать
     type();
 });
