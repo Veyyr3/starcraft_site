@@ -515,3 +515,19 @@ nav {
 .modal-close:hover {
   color: #00a2ff;
 }
+
+/* ========================== печатающийся текст ========================== */
+/* Мигающий курсор в конце печатающегося текста */
+.typing-cursor::after {
+  content: '|';
+  color: #00a2ff; /* Неоновый синий цвет StarCraft */
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
